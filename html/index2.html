@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>What gift should I buy for</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="Ivaylo Nikolov">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+  <link rel="stylesheet" href="css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/header.css" >
+  <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+    <div id="wrap">
+      <div id="logo">pickgiftfor.com</div>
+      <header>        
+          <nav id="menu">              
+            <div class="menu-item active selected">
+              <a href="#">home</a>
+            </div>
+            <div class="menu-item">
+              <a href="#">faq</a>    
+            </div>          
+            <div class="menu-item">
+              <a href="#" >blog</a>              
+            </div>
+            <div class="menu-item">
+              <a href="#" >contacts</a>
+            </div>
+            <div class="select-area"></div>
+          </nav>
+      </header>
+      <section id="add-hobbies">
+        <div id="main-sentence">Pick the best 
+          <span class="black">gift
+          </span>
+        </div>  
+        <div id="hobbies-input">
+          <input type="text" placeholder="Enter your hobbies...">
+          <i class="fa fa-search"></i>
+          <span id="search-icon"></span>
+          <div id="added-hobbies">
+            <div class="hobby">
+              Your favourite hobby go here<div class="remove-hobby">x</div>
+            </div>
+          </div>        
+        </div>      
+      </section>
+      <section id="recommendations">    
+      </section>
+    </div>
+    <section id="live-chat">
+      <div id="live-chat-header">
+        <span id="header">Welcome to LiveChat</span>
+        <span id="icons">
+            <i id="popup" class="fas fa-window-maximize"></i>
+            <i class="fas fa-window-close"></i>
+        </span>
+      </div>
+      <div id="messages" class="hide">
+      </div>
+      <div id="message-board" class="hide">
+        <textarea></textarea>
+      </div>
+      </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/uuid.js"></script>
+    <script src="js/chat.js"></script>
+
+    <script src="js/ajax.js"></script>
+    <script src="js/getGifts.js"></script>
+    <script src="js/removeHobby.js"></script>
+    <script src="js/updateHobbies.js"></script>
+</body>
+</html>
+

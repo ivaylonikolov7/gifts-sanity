@@ -1,0 +1,64 @@
+a{
+    color:#AAAAAA;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+#wrap{
+    padding-left:50px;
+}
+.active.selected a{
+    color: #FE3171;
+    text-decoration: underline;    
+}
+#logo{
+    float:left; 
+    margin-top: 40px;
+    margin-left: 50px;
+    color: #FE5E72;
+    font-size:24px;
+}
+header{
+    padding: 20px 30px;
+}
+header nav#menu {
+    
+    margin-right:60px;   
+    margin-top:20px;
+    font-size:12px;
+}
+
+#logo-text{
+    font-family:'Rubik', 'sans serif';    
+    margin-left:0px;
+    color: #fff;
+    font-weight:500;
+}
+
+.clear{
+    clear:both;
+}
+
+#menu .menu-item{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right:4px;
+    margin-right: 40px;
+    font-size:15px;
+    font-family: Karla;
+}
+#menu .menu-item:hover{
+    background-color: #fff;
+}
+.select-area{
+    transition: 1s ease;
+    
+}
+#menu{
+    display:flex;
+    float:right;
+}
+#header{
+    font-size:14px;
+}

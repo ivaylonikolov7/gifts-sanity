@@ -1,0 +1,42 @@
+html{
+    font-family: 'Rubik';
+}
+body{
+    background-image: url('../images/Group 32.png');      
+    background-size:100% auto;
+    background-repeat: no-repeat;
+    background-color:#fff;
+    font-family:'Rubik';    
+    background-position: bottom right;
+    
+}
+#blog-posts-intro{    
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+#wrap{
+    width:80%;
+}
+#blog-posts-intro h1{
+    font-size:50px;
+    
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+#blog-posts-intro p{
+    width: 300px;
+    font-size: 12px;
+    color: #A3ABB7;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+button#blog{
+    background-color: #FE5E72;
+    box-shadow: none;
+    outline: none;
+    border:0;
+    color: #fff;
+    padding: 20px;
+}
