@@ -10,35 +10,32 @@ let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
 
-io.on('connection', function(socket){
-    let roomSocket;
-    socket.on('send admin message', (data)=>{
-        io.to(roomSocket).emit('user send admin', {message: data.message, room:roomSocket});
-    })    
-    socket.on('join room', (roomStr)=>{
-        roomSocket = roomStr
-        socket.join(roomStr);
-        io.emit('admin please join room', roomStr);
-    })
-    socket.on('make admin join room', (roomStr)=>{
-        socket.join(roomStr);
-        roomSocket = roomStr
-        io.to(roomStr).emit('add a room to frontend', roomStr);
-    })
-    socket.on('send user message', message =>{
-        io.to(roomSocket).emit('admin send user message', message)
-    })
-  });
+// io.on('connection', function(socket){
+//     let roomSocket;
+//     socket.on('send admin message', (data)=>{
+//         io.to(roomSocket).emit('user send admin', {message: data.message, room:roomSocket});
+//     })    
+//     socket.on('join room', (roomStr)=>{
+//         roomSocket = roomStr
+//         socket.join(roomStr);
+//         io.emit('admin please join room', roomStr);
+//     })
+//     socket.on('make admin join room', (roomStr)=>{
+//         socket.join(roomStr);
+//         roomSocket = roomStr
+//         io.to(roomStr).emit('add a room to frontend', roomStr);
+//     })
+//     socket.on('send user message', message =>{
+//         io.to(roomSocket).emit('admin send user message', message)
+//     })
+//   });
 
-mongoose.connect('mongodb://localhost:27017/local', { 
-    useNewUrlParser: true,
-    useUnifiedTopology: true  
-});
+
 
 app.use(express.static(__dirname + '/html'))
 
 
-const GiftSchema = mongoose.Schema({
+/*const GiftSchema = mongoose.Schema({
     name: String,
     hobby: { type: mongoose.Schema.Types.ObjectId, ref: 'Hobby'},
     price: Number,
@@ -56,12 +53,6 @@ const HobbySchema = mongoose.Schema({
     
 })
 
-/*Hobby.create({
-    name: ['Mom', 'My mom', 'mum', 'mother'],
-    timesSelected:0,
-    url_slug: 'your mother',
-    description: ''
-})*/
 
 
 GiftSchema.statics.filterByHobby = function(hobbiesInput){
@@ -87,14 +78,8 @@ GiftSchema.statics.filterByHobby = function(hobbiesInput){
 const Hobby = mongoose.model('Hobby', HobbySchema);
 const Gift = mongoose.model('Gift', GiftSchema);
 
-Hobby.create({
-    name: 'Wrestling',
-    timesSelected: 0, 
-    url_slug: 'wrestling fans',
-    description: 'Best gift for wrestling fans'
-})
-
-
+*/
+/*
 app.get('/gifts', (req, res)=>{
     if(req.query.hobbies){
         let hobbies = req.query.hobbies.split(',')
@@ -128,7 +113,7 @@ app.get('/', (req, res)=>{
 app.get('/search', (req,res)=>{
     res.sendFile(path.join(__dirname + '/html/index2.html'));
 })
-
+*/
 app.get('/what-should-i-buy-for-:giftId', (req,res)=>{
     res.render('blogpost', {title: req.params.giftId});
 })
@@ -136,6 +121,6 @@ app.get('/what-should-i-buy-for-:giftId', (req,res)=>{
 app.get('/chat', (req, res)=>{    
     res.sendFile(path.join(__dirname + '/html/chat.html'));
 })
-http.listen(3000, ()=>{
+http.listen(3300, ()=>{
 
 })
